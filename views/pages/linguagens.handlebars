@@ -1,0 +1,19 @@
+
+<header id="Pcabecalho">
+    <label class="lcabecalho">Linguagens</label>
+    <a href="/pages/linguagens/add"><button class="novo">+ Nova linguagem</button></a>
+</header>
+{{#each linguagens}}
+<div id="tamanho" class="card">
+    <div class="card-body">
+        <h4>{{titulo}}</h4>
+        <h6>{{descricao}}</h6><br>
+        <small><b> Data de Publicação: </b>{{#formatDate data}}{{/formatDate}}</small><br>
+        <a id="leia" href="/linguagem/{{_id}}" target="_blank">Leia mais...</a><br>
+        <a href="/pages/linguagens/edit/{{_id}}"><button class="btn btn-outline-secondary btn-sm mt-3">Editar</button></a>
+        <a href="/pages/linguagens/excluir/{{_id}}"><button class="btn btn-outline-danger btn-sm mt-3">Excluir</button></a>
+</div>
+</div>
+{{else}}
+<p>Nenhuma linguagem cadastrada</p>
+{{/each}}
