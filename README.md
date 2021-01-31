@@ -1,4 +1,4 @@
-# Site_Linguagem
+# Site Linguagem
 
 #### _Página index do site:_
 
@@ -16,4 +16,4 @@
 
 ###### Desafio dev spedy 2021
 
-::warning Status do projeto em desenvolvimento...
+warning:: Status do projeto em desenvolvimento...
