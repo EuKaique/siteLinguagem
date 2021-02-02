@@ -8,7 +8,6 @@ const linguagem = new Schema({
     },
     descricao: {
         type: String,
-        default: Date.now(),
         required: true
     }
 })

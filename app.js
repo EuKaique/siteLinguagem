@@ -3,13 +3,13 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
 const app = express();
-const pages = require("./routes/pages");
+const pages = require("./route/pages");
 const path = require("path");
 const session = require("express-session");
 const flash = require("connect-flash");
 const moment = require("moment");
 const mongoose = require("mongoose")
-require("./models/linguagem")
+require("./model/linguagem")
 const linguagem = mongoose.model("linguagens")
 
 //Configurações
@@ -38,7 +38,7 @@ app.engine(
     defaultLayout: "main",
     helpers: {
       formatDate: (data) => {
-        return moment(data).format("DD/MM/YYYY");
+        return moment(data).format('DD/MM/YYYY');
       },
     },
   })

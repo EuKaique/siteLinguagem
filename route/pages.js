@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require("mongoose")
-require("../models/linguagem")
+require("../model/linguagem")
 const linguagem = mongoose.model("linguagens")
 
 router.get('/',(req,res)=>{
@@ -30,12 +30,12 @@ router.post("/linguagens/nova", (req, res)=>{
         res.render("pages/addlinguagens", {erros: erros})
     }else{
         
-        const novoClassificado = {
+        const novaLinguagem = {
             titulo: req.body.titulo,
             data: req.body.data,
             descricao: req.body.descricao
         }
-        new linguagem(novoClassificado).save().then(()=>{
+        new linguagem(novaLinguagem).save().then(()=>{
             req.flash("success_msg","Linguagem adicionada com sucesso");
             res.redirect("/pages/linguagens")
         }).catch((err)=>{
@@ -82,7 +82,7 @@ router.post("/linguagens/edit", (req,res)=>{
 
 router.get("/linguagens/excluir/:id",(req,res)=>{
     linguagem.remove({_id: req.params.id}).then(()=>{
-        req.flash("success_msg","linguagem deletada")
+        req.flash("warning_msg","linguagem deletada")
         res.redirect("/pages/linguagens")
     }).catch((err)=>{
         req.flash("error_msg","Houve um erro interno")
