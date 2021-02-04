@@ -9,7 +9,7 @@ const linguagem = new Schema({
     descricao: {
         type: String,
         required: true
-    }
+    },
 })
 
 mongoose.model("linguagens", linguagem);

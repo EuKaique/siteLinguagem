@@ -39,7 +39,7 @@ app.engine(
     helpers: {
       formatDate: (data) => {
         return moment(data).format('DD/MM/YYYY');
-      },
+      }
     },
   })
 );

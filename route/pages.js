@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 require("../model/linguagem")
 const linguagem = mongoose.model("linguagens")
 
+
 router.get('/',(req,res)=>{
     res.render("pages/index")
 });
@@ -24,17 +25,17 @@ router.get("/linguagens/add",(req,res)=>{
 });
 
 router.post("/linguagens/nova", (req, res)=>{
-    var erros = []
 
+    var erros = []
     if(erros.length > 0){
         res.render("pages/addlinguagens", {erros: erros})
     }else{
         
         const novaLinguagem = {
             titulo: req.body.titulo,
-            data: req.body.data,
             descricao: req.body.descricao
         }
+        
         new linguagem(novaLinguagem).save().then(()=>{
             req.flash("success_msg","Linguagem adicionada com sucesso");
             res.redirect("/pages/linguagens")
