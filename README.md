@@ -19,5 +19,3 @@
 ![03](https://user-images.githubusercontent.com/34290569/106665311-e363f780-6584-11eb-97b6-a3b78484e000.PNG)
 
 ###### Desafio dev spedy 2021
-
-:warning: Status do projeto em desenvolvimento...
