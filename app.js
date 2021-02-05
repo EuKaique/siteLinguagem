@@ -41,7 +41,7 @@ app.engine(
         return moment(data).format('DD/MM/YYYY');
       }
     },
-  })
+  }),
 );
 app.set("view engine", "handlebars");
 //Mongoose
@@ -84,7 +84,7 @@ app.get("/linguagem/:id", (req, res) => {
 
 app.use("/pages", pages);
 
-//Outros
+//PORTA
 const PORT = 8081;
 app.listen(PORT, () => {
   console.log("Servidor rodando!");
